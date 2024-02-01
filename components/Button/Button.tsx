@@ -8,7 +8,7 @@ export type ButtonProps = {
 const Button = ({children, className}: ButtonProps) => {
     return <button
     //Passando a props className para o button para que possa ser adicionada classes complementares
-    className={`bg-[#2D5BFF] rounded-lg px-8 py-3 text-[#ffffff] text-lg fonr ${className}`}
+    className={`bg-primary rounded-lg px-8 py-3 text-[#ffffff] text-lg ${className}`}
     >{children}</button>
 }
 
