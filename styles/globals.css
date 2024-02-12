@@ -1,8 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Mulish";
+  src: url("../fonts/Mulish-Black.ttf") format("ttf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+}
+
+* {
+  font-family: "Mulish", sans-serif;
+}
 
 @layer base {
   :root {
@@ -26,6 +38,7 @@
     --text-secondary: 92, 92, 92;
     --text-tertiary: 116, 116, 116;
     --text-disabled: 138, 138, 138;
+    --text-white: 255, 255, 255;
 
     /* Screens */
     --screen-mobile: 640px;
@@ -42,7 +55,32 @@
     --shadow-button-focus: 0px 0px 0px 2px #af4bfe;
 
     /* Blur */
-    --blur: 4px
+    --blur: 4px;
+
+    /* Spacing */
+    --spacing-none: 0px;
+    --spacing-4xs: 8px;
+    --spacing-2xs: 12px;
+    --spacing-xs: 16px;
+    --spacing-sm: 20px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 40px;
+    --spacing-2xl: 48px;
+    --spacing-4xl: 56px;
+
+    /* Border Radius */
+    --border-radius-none: 0px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+    /* Font Size */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-nd: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
   }
 
   .theme-violet {
@@ -51,8 +89,4 @@
     --tertiary: 226, 186, 255;
     --quaternary: 245, 232, 255;
   }
-}
-
-body {
-  font-family: "Mulish", sans-serif;
 }

@@ -13,6 +13,10 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      mulish: "Mulish, sans-serif",
+    },
+
     //Screens fora do extend irá sobrescrever o padrão do tailwind
 
     screens: {
@@ -22,25 +26,87 @@ module.exports = {
       tv: "var(--screen-mobile)",
     },
 
+    spacing: {
+      // Valores t-shirt size
+      none: "var(--spacing-none) /* 0px */",
+      "4xs": "var(--spacing-4xs) /* 8px */",
+      "2xs": "var(--spacing-2xs) /* 12px */",
+      xs: "var(--spacing-xs) /* 16px */",
+      sm: "var(--spacing-sm) /* 20px */",
+      md: "var(--spacing-md) /* 24px */",
+      lg: "var(--spacing-lg) /* 32px */",
+      xl: "var(--spacing-xl) /* 40px */",
+      "2xl": "var(--spacing-2xl) /* 48px */",
+      "4xl": "var(--spacing-4xl) /* 56px */",
+
+      // Valores de gradação
+
+      0: "var(--spacing-none) /* 0px */",
+      1: "var(--spacing-4xs) /* 8px */",
+      2: "var(--spacing-2xs) /* 12px */",
+      3: "var(--spacing-xs) /* 16px */",
+      4: "var(--spacing-sm) /* 20px */",
+      5: "var(--spacing-md) /* 24px */",
+      6: "var(--spacing-lg) /* 32px */",
+      7: "var(--spacing-xl) /* 40px */",
+      8: "var(--spacing-2xl) /* 48px */",
+      9: "var(--spacing-4xl) /* 56px */",
+    },
+
+    fontSize: {
+      xs: "var(--font-xs)",
+      sm: "var(--font-sm)",
+      md: "var(--font-md)",
+      lg: "var(--font-lg)",
+      xl: "var(--font-xl)",
+    },
+
     extend: {
       //colors dentro do extend irá complementar as cores já existentes no tailwind
       colors: {
-        primary: toRgba("--primary"),
-        secondary: toRgba("--secondary"),
-        tertiary: toRgba("--tertiary"),
-        quaternary: toRgba("--quaternary"),
-        hover: toRgba("--hover"),
-        click: toRgba("--click"),
-        icon: toRgba("--icon"),
-        outline: toRgba("--outline"),
-        divider: toRgba("--divider"),
-        "bg-light": toRgba("--bg-light"),
-        "bg-dark": toRgba("--bg-dark"),
-        "bg-disabled": toRgba("--bg-disabled"),
-        "text-primary": toRgba("--text-primary"),
-        "text-secondary": toRgba("--text-secondary"),
-        "text-tertiary": toRgba("--text-tertiary"),
-        "text-disabled": toRgba("--text-disabled"),
+        // Removendo a função toRgba para adicionar o alpha placeholder
+
+        // primary: toRgba("--primary"),
+        // secondary: toRgba("--secondary"),
+        // tertiary: toRgba("--tertiary"),
+        // quaternary: toRgba("--quaternary"),
+        // hover: toRgba("--hover"),
+        // click: toRgba("--click"),
+        // icon: toRgba("--icon"),
+        // outline: toRgba("--outline"),
+        // divider: toRgba("--divider"),
+        // "bg-light": toRgba("--bg-light"),
+        // "bg-dark": toRgba("--bg-dark"),
+        // "bg-disabled": toRgba("--bg-disabled"),
+        // "text-primary": toRgba("--text-primary"),
+        // "text-secondary": toRgba("--text-secondary"),
+        // "text-tertiary": toRgba("--text-tertiary"),
+        // "text-white": toRgba("--text-white"),
+
+        primary: "rgba(var(--primary), <alpha-value>)",
+        secondary: "rgba(var(--secondary), <alpha-value>)",
+        tertiary: "rgba(var(--tertiary), <alpha-value>)",
+        quaternary: "rgba(var(--quaternary), <alpha-value>)",
+        hover: "rgba(var(--hover), <alpha-value>)",
+        click: "rgba(var(--click), <alpha-value>)",
+        icon: "rgba(var(--icon), <alpha-value>)",
+        outline: "rgba(var(--outline), <alpha-value>)",
+        divider: "rgba(var(--divider), <alpha-value>)",
+      },
+      // Contextualização de cores
+      backgroundColor: {
+        light: "rgba(var(--bg-light), <alpha-value>)",
+        dark: "rgba(var(--bg-dark), <alpha-value>)",
+        disabled: "rgba(var(--bg-disabled), <alpha-value>)",
+      },
+      textColor: {
+        gray: {
+          primary: "rgba(var(--text-primary), <alpha-value>)",
+          secondary: "rgba(var(--text-secondary), <alpha-value>)",
+          tertiary: "rgba(var(--text-tertiary), <alpha-value>)",
+        },
+        disabled: "rgba(var(--text-disabled), <alpha-value>)",
+        white: "rgba(var(--text-white))",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -58,7 +124,14 @@ module.exports = {
       },
       blur: {
         default: "var(--blur-default)",
-      }
+      },
+
+      borderRadius: {
+        none: "var(--border-radius-none)",
+        sm: "var(--border-radius-sm)",
+        md: "var(--border-radius-md)",
+        lg: "var(--border-radius-lg)",
+      },
     },
   },
   plugins: [],
