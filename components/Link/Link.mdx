@@ -1,0 +1,23 @@
+import {Meta, Canvas, Primary, Controls} from '@storybook/blocks'
+
+import * as Story from "./Link.stories.ts";
+
+<Meta of={Story} />
+
+# Link
+
+Este é um componente de link, utilizado para navegação de páginas ou sessões
+
+### Primary Link
+<Canvas of={Story.Primary}/>
+
+### Primary Link Disabled
+<Canvas of={Story.Disabled}/>
+
+###  Link Theme Violet
+<Canvas of={Story.Violet}/>
+
+## Documentação Interativa
+
+<Primary/>
+<Controls/>

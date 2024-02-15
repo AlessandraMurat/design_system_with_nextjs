@@ -1,26 +1,47 @@
 export type ButtonProps = {
-    children: React.ReactNode
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "tertiary";
+  //Extendendo as propriedades do button nativo do HTML
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-    //Extendendo as propriedades do button nativo do HTML
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
-  
+function getVariant(
+  variant: ButtonProps["variant"],
+  disabled: ButtonProps["disabled"]
+) {
+  switch (variant) {
+    case "primary":
+      return disabled ? " bg-disabled text-disabled" : "bg-primary text-white";
 
-const Button = ({children, className, disabled, ...rest}: ButtonProps) => {
-    const generalStyle = 'rounded-md px-lg py-2xs text-lg'
-    const Btn = (classes: string) => {
-        return <button
-        //Passando a props className para o button para que possa ser adicionada classes complementares
-       
-        className={`${generalStyle} ${className} ${classes}`} 
-        disabled={disabled}
-        {...rest}
-        >
-            {children}
-        </button>
-    }
-
-    return Btn(disabled ? 'bg-disabled text-disabled' : 'bg-primary text-white' )
-   
+    case "secondary":
+      return disabled
+        ? "bg-disabled text-disabled"
+        : "bg-quaternary text-primary";
+    case "tertiary":
+      return disabled ? "text-disabled" : "text-primary";
+    default:
+      return disabled ? "" : "";
+  }
 }
-    
-export default Button
+
+const Button = ({
+  variant = "primary",
+  children,
+  className,
+  disabled,
+  ...rest
+}: ButtonProps) => {
+  return (
+    <button
+      className={`rounded-md px-lg py-2xs text-lg ${getVariant(
+        variant,
+        disabled
+      )} ${className}`}
+      disabled={disabled}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default Button;

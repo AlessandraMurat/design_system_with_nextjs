@@ -54,11 +54,11 @@ module.exports = {
     },
 
     fontSize: {
-      xs: "var(--font-xs)",
-      sm: "var(--font-sm)",
-      md: "var(--font-md)",
-      lg: "var(--font-lg)",
-      xl: "var(--font-xl)",
+      xs: "var(--text-xs)",
+      sm: "var(--text-sm)",
+      md: "var(--text-md)",
+      lg: "var(--text-lg)",
+      xl: "var(--text-xl)",
     },
 
     extend: {
@@ -92,6 +92,7 @@ module.exports = {
         icon: "rgba(var(--icon), <alpha-value>)",
         outline: "rgba(var(--outline), <alpha-value>)",
         divider: "rgba(var(--divider), <alpha-value>)",
+        disabled: "rgba(var(--text-disabled), <alpha-value>)",
       },
       // Contextualização de cores
       backgroundColor: {
@@ -105,7 +106,6 @@ module.exports = {
           secondary: "rgba(var(--text-secondary), <alpha-value>)",
           tertiary: "rgba(var(--text-tertiary), <alpha-value>)",
         },
-        disabled: "rgba(var(--text-disabled), <alpha-value>)",
         white: "rgba(var(--text-white))",
       },
       backgroundImage: {
